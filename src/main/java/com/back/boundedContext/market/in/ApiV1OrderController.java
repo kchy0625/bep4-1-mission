@@ -10,7 +10,6 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -37,7 +36,6 @@ public class ApiV1OrderController {
             methods = {RequestMethod.POST}
     )
     @PostMapping("/{id}/payment/confirm/by/tossPayments")
-    @Transactional
     public RsData<Void> confirmPaymentByTossPayments(
             @PathVariable int id,
             @Valid @RequestBody ConfirmPaymentByTossPaymentsReqBody reqBody
