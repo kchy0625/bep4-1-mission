@@ -15,17 +15,18 @@ public class MemberPolicy {
         PASSWORD_CHANGE_DAYS = days;
     }
 
-    public Duration getNeedToChangePasswordPeriod(){
+    public Duration getNeedToChangePasswordPeriod() {
         return Duration.ofDays(PASSWORD_CHANGE_DAYS);
     }
 
-    public int getNeedToChangePasswordDays(){
+    public int getNeedToChangePasswordDays() {
         return PASSWORD_CHANGE_DAYS;
     }
 
-    public boolean isNeedToChangePassword(LocalDateTime lastChangedAt){
-        if(lastChangedAt  == null) return true;
+    public boolean isNeedToChangePassword(LocalDateTime lastChangeDate) {
+        if (lastChangeDate == null) return true;
 
-        return lastChangedAt.plusDays(PASSWORD_CHANGE_DAYS).isBefore(LocalDateTime.now());
+        return lastChangeDate.plusDays(PASSWORD_CHANGE_DAYS)
+                .isBefore(LocalDateTime.now());
     }
 }

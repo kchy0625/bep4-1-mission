@@ -7,7 +7,6 @@ import com.back.boundedContext.cash.out.WalletRepository;
 import com.back.shared.cash.dto.CashMemberDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor

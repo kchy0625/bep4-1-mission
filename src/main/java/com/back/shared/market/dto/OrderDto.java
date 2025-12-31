@@ -8,8 +8,8 @@ import java.time.LocalDateTime;
 
 @AllArgsConstructor
 @Getter
-public class OrderDto implements CanGetModelTypeCode{
-private final int id;
+public class OrderDto implements CanGetModelTypeCode {
+    private final int id;
     private final LocalDateTime createDate;
     private final LocalDateTime modifyDate;
     private final int customerId;
@@ -23,6 +23,4 @@ private final int id;
     public String getModelTypeCode() {
         return "Order";
     }
-
-
 }

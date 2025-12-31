@@ -1,8 +1,6 @@
 package com.back.shared.market.out;
 
 import com.back.global.exception.DomainException;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +16,6 @@ import java.util.Map;
 @Service
 public class TossPaymentsService {
 
-    private static final Logger log = LoggerFactory.getLogger(TossPaymentsService.class);
     private static final String TOSS_BASE_URL = "https://api.tosspayments.com";
     private static final String CONFIRM_PATH = "/v1/payments/confirm";
 
@@ -36,7 +33,6 @@ public class TossPaymentsService {
     }
 
     public Map<String, Object> confirmCardPayment(String paymentKey, String orderId, long amount) {
-        log.info("Toss Payments Secret Key for orderId {}: '{}'", orderId, tossSecretKey);
         TossPaymentsConfirmRequest requestBody = new TossPaymentsConfirmRequest(
                 paymentKey,
                 orderId,
